@@ -1,8 +1,11 @@
+import { Meteor } from 'meteor/meteor'
 import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
 import TodoList from '../components/TodoList.jsx'
-
+import { Todos } from '/lib/collections'
+import { connectMeteor } from 'connect-meteor'
 const getVisibleTodos = (todos, filter) => {
+    console.log('FILTER', filter)
   switch (filter) {
     case 'SHOW_ALL':
       return todos
@@ -10,13 +13,16 @@ const getVisibleTodos = (todos, filter) => {
       return todos.filter(t => t.completed)
     case 'SHOW_ACTIVE':
       return todos.filter(t => !t.completed)
+    default:
+        return todos
   }
 }
 
 const mapStateToProps = (state) => {
     console.log(state)
   return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+      visibilityFilter: state.visibilityFilter
+    // todos: getVisibleTodos(state.todos, state.visibilityFilter)
   }
 }
 
@@ -28,9 +34,20 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const subscribe = (props) => { // eslint-disable-line no-unused-vars
+    return { todos: Meteor.subscribe('todos') }
+}
+
+const mapMeteorDataToProps = (props, subscriptions) => {
+    return {
+        loading: !subscriptions.todos.ready(),
+        todos: getVisibleTodos(Todos.find({}).fetch(), props.visibilityFilter)
+    }
+}
+
 const VisibleTodoList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoList)
+)(connectMeteor(subscribe, mapMeteorDataToProps)(TodoList))
 
 export default VisibleTodoList

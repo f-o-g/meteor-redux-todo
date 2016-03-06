@@ -2,7 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute } from 'react-router'
 
-import Layout from './modules/layout'
+import Layout from './modules/core'
 import Todos from './modules/todos'
 
  const App = (store, history) => (

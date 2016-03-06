@@ -7,21 +7,20 @@ const TodoList = ({ todos, onTodoClick }) => {
   <ul>
     {todos.map(todo =>
       <Todo
-        key={todo.id}
+        key={todo._id}
         {...todo}
-        onClick={() => onTodoClick(todo.id)}
+        onClick={() => onTodoClick(todo._id)}
       />
     )}
   </ul>
 )}
 
-// TodoList.propTypes = {
-//   todos: PropTypes.arrayOf(PropTypes.shape({
-//     id: PropTypes.number.isRequired,
-//     completed: PropTypes.bool.isRequired,
-//     text: PropTypes.string.isRequired
-//   }).isRequired).isRequired,
-//   onTodoClick: PropTypes.func.isRequired
-// }
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired).isRequired,
+  onTodoClick: PropTypes.func.isRequired
+}
 
 export default TodoList
