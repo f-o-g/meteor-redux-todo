@@ -1,0 +1,149 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "plugins": [
+  	"react"
+	],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "arrowFunctions": true,
+            "blockBindings": true,
+            "classes": true,
+            "defaultParams": true,
+            "destructuring": true,
+            "forOf": true,
+            "generators": false,
+            "modules": true,
+            "objectLiteralComputedProperties": true,
+            "objectLiteralDuplicateProperties": false,
+            "objectLiteralShorthandMethods": true,
+            "objectLiteralShorthandProperties": true,
+            "spread": true,
+            "superInFunctions": true,
+            "templateStrings": true
+        }
+  },
+  "rules": {
+    "strict": 0,
+
+    /**
+     * Variables
+     */
+    "no-var": 2,
+  	"prefer-const": 1,
+  	"no-shadow": 2,
+  	"no-shadow-restricted-names": 2,
+  	"no-use-before-define": 2,
+  	"no-undef": 2,
+  	"no-unused-vars": [2, {
+      "vars": "local",
+      "args": "after-used"
+    }],
+    /**
+     * Possible errors
+     */
+     "no-console": 0,
+
+     /**
+     * Best practices
+     */
+    "default-case": 2,               // http://eslint.org/docs/rules/default-case
+    "dot-notation": [2, {            // http://eslint.org/docs/rules/dot-notation
+      "allowKeywords": true
+    }],
+    "no-else-return": 0,             // http://eslint.org/docs/rules/no-else-return
+    "no-eq-null": 2,                 // http://eslint.org/docs/rules/no-eq-null
+    "no-eval": 2,                    // http://eslint.org/docs/rules/no-eval
+    "no-extend-native": 2,           // http://eslint.org/docs/rules/no-extend-native
+    "no-extra-bind": 2,              // http://eslint.org/docs/rules/no-extra-bind
+    "no-fallthrough": 2,             // http://eslint.org/docs/rules/no-fallthrough
+    "no-floating-decimal": 2,        // http://eslint.org/docs/rules/no-floating-decimal
+    "no-lone-blocks": 2,             // http://eslint.org/docs/rules/no-lone-blocks
+    "no-loop-func": 2,               // http://eslint.org/docs/rules/no-loop-func
+    "no-multi-str": 2,               // http://eslint.org/docs/rules/no-multi-str
+    "no-native-reassign": 2,         // http://eslint.org/docs/rules/no-native-reassign
+    "no-new": 2,                     // http://eslint.org/docs/rules/no-new
+    "no-new-func": 2,                // http://eslint.org/docs/rules/no-new-func
+    "no-new-wrappers": 2,            // http://eslint.org/docs/rules/no-new-wrapper
+    "no-param-reassign": 2,          // http://eslint.org/docs/rules/no-param-reassign
+    "no-proto": 2,                   // http://eslint.org/docs/rules/no-proto
+    "no-redeclare": 2,               // http://eslint.org/docs/rules/no-redeclare
+    "no-return-assign": 2,           // http://eslint.org/docs/rules/no-return-assign
+    "no-script-url": 2,              // http://eslint.org/docs/rules/no-script-url
+    "no-self-compare": 2,            // http://eslint.org/docs/rules/no-self-compare
+    "no-throw-literal": 2,           // http://eslint.org/docs/rules/no-throw-literal
+    "no-with": 2,                    // http://eslint.org/docs/rules/no-with
+    "radix": 2,                      // http://eslint.org/docs/rules/radix
+
+    /**
+     * Style
+     */
+    "brace-style": [
+      2,               // http://eslint.org/docs/rules/brace-style
+      "1tbs", {
+        "allowSingleLine": true
+      }
+    ],
+    "no-mixed-spaces-and-tabs": 0,
+    "quotes": [
+      2, "single", "avoid-escape"    // http://eslint.org/docs/rules/quotes
+    ],
+    "camelcase": [2, {               // http://eslint.org/docs/rules/camelcase
+      "properties": "never"
+    }],
+    "comma-spacing": [2, {           // http://eslint.org/docs/rules/comma-spacing
+      "before": false,
+      "after": true
+    }],
+    "comma-style": [2, "last"],      // http://eslint.org/docs/rules/comma-style
+    "eol-last": 0,
+    "func-names": 1,                 // http://eslint.org/docs/rules/func-names
+    "key-spacing": [2, {             // http://eslint.org/docs/rules/key-spacing
+      "beforeColon": false,
+      "afterColon": true
+    }],
+    "new-cap": 1,
+    "no-multiple-empty-lines": [2, { // http://eslint.org/docs/rules/no-multiple-empty-lines
+      "max": 2
+    }],
+    "no-nested-ternary": 2,          // http://eslint.org/docs/rules/no-nested-ternary
+    "no-new-object": 2,              // http://eslint.org/docs/rules/no-new-object
+    "no-spaced-func": 2,             // http://eslint.org/docs/rules/no-spaced-func
+    "no-trailing-spaces": 2,         // http://eslint.org/docs/rules/no-trailing-spaces
+    "no-extra-parens": [0, "functions"], // http://eslint.org/docs/rules/no-extra-parens
+    "no-underscore-dangle": 0,       // http://eslint.org/docs/rules/no-underscore-dangle
+    "one-var": [2, "never"],         // http://eslint.org/docs/rules/one-var
+    "padded-blocks": [2, "never"],   // http://eslint.org/docs/rules/padded-blocks
+    "space-before-blocks": 2,        // http://eslint.org/docs/rules/space-before-blocks
+    "space-before-function-paren": [2, "never"], // http://eslint.org/docs/rules/space-before-function-paren
+    "space-infix-ops": 2,            // http://eslint.org/docs/rules/space-infix-ops
+    "spaced-comment": [2, "always",  {// http://eslint.org/docs/rules/spaced-comment
+      "exceptions": ["-", "+"],
+      "markers": ["=", "!"]           // space here to support sprockets directives
+    }],
+    // React
+    "jsx-quotes": [2, "prefer-double"],
+    "react/display-name": 0,
+    "react/jsx-boolean-value": 1,
+    "react/jsx-no-undef": 2,
+    "react/jsx-sort-prop-types": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/no-did-mount-set-state": [2, "allow-in-func"],
+    "react/no-did-update-set-state": 2,
+    "react/no-multi-comp": 0,
+    "react/no-unknown-property": 2,
+    "react/prop-types": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/self-closing-comp": 2,
+    "react/sort-comp": 2,
+    "react/wrap-multilines": 2
+  }
+}
