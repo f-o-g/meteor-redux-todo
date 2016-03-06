@@ -22,7 +22,6 @@ const mapStateToProps = (state) => {
     console.log(state)
   return {
       visibilityFilter: state.visibilityFilter
-    // todos: getVisibleTodos(state.todos, state.visibilityFilter)
   }
 }
 
